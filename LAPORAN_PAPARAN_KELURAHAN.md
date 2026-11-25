@@ -99,6 +99,7 @@ erDiagram
         string category
         enum priority "Penting, Agenda, Himbauan"
         text details
+        int created_by FK
         datetime created_at
     }
     AGENDAS {
@@ -110,12 +111,14 @@ erDiagram
         string location
         string organizer
         string image_path
+        int created_by FK
     }
     GALLERY {
         int id PK
         string title
         string tag
         string image_path
+        int uploaded_by FK
         datetime uploaded_at
     }
     ASPIRATIONS {
@@ -129,6 +132,9 @@ erDiagram
 
     USERS ||--o{ NEWS : "menulis / moderasi"
     USERS ||--o{ UMKM : "menginput"
+    USERS ||--o{ ANNOUNCEMENTS : "menerbitkan"
+    USERS ||--o{ AGENDAS : "mengelola"
+    USERS ||--o{ GALLERY : "mengunggah"
     UMKM ||--o{ UMKM_PRODUCTS : "memiliki"
 ```
 
