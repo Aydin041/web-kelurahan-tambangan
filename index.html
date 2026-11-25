@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Kelurahan Tambangan, Kec. Mijen, Kota Semarang</title>
+
+  <!-- Font Plus Jakarta Sans from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css?v=3">
+</head>
+
+<body>
+
+  <!-- PROTOTYPE CONTROLLER & DEMO TOOLBAR -->
+  <header class="proto-control-bar">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <span class="proto-badge"><i class="fas fa-layer-group"></i> Portal Kelurahan Tambangan</span>
+      <span style="font-size:0.75rem; color:#CBD5E1; display:inline-flex; align-items:center; gap:5px;">
+        <i class="fas fa-graduation-cap" style="color:var(--color-gold);"></i> KKN Tematik Periode 38 Unwahas
+      </span>
+    </div>
+
+    <!-- View Switcher Tabs -->
+    <div class="proto-nav-group">
+      <button class="proto-btn proto-btn-view active" data-view="home" onclick="navigateTo('home')">
+        <i class="fas fa-home"></i> Beranda
+      </button>
+      <button class="proto-btn proto-btn-view" data-view="profil" onclick="navigateTo('profil')">
+        <i class="fas fa-id-card"></i> Profil
+      </button>
+      <button class="proto-btn proto-btn-view" data-view="pemerintahan" onclick="navigateTo('pemerintahan')">
+        <i class="fas fa-sitemap"></i> Pemerintahan
+      </button>
+      <button class="proto-btn proto-btn-view" data-view="layanan" onclick="navigateTo('layanan')">
+        <i class="fas fa-file-invoice"></i> Layanan
+      </button>
+      <button class="proto-btn proto-btn-view" data-view="berita" onclick="navigateTo('berita')">
+        <i class="fas fa-newspaper"></i> Berita
+      </button>
+      <button class="proto-btn proto-btn-view" data-view="pengumuman" onclick="navigateTo('pengumuman')">
+        <i class="fas fa-bullhorn"></i> Pengumuman
+      </button>
+      <button class="proto-btn proto-btn-view" data-view="agenda" onclick="navigateTo('agenda')">
+        <i class="far fa-calendar-alt"></i> Agenda
+      </button>
+      <button class="proto-btn proto-btn-view" data-view="umkm" onclick="navigateTo('umkm')">
+        <i class="fas fa-store"></i> UMKM
+      </button>
+      <button class="proto-btn proto-btn-view" data-view="lingkungan" onclick="navigateTo('lingkungan')">
+        <i class="fas fa-leaf"></i> Lingkungan
+      </button>
+      <button class="proto-btn proto-btn-view" data-view="kesehatan" onclick="navigateTo('kesehatan')">
+        <i class="fas fa-heartbeat"></i> Kesehatan
+      </button>
+      <button class="proto-btn proto-btn-view" data-view="kontak" onclick="navigateTo('kontak')">
+        <i class="fas fa-envelope"></i> Kontak
+      </button>
+      <button class="proto-btn proto-btn-view" data-view="admin_dashboard" onclick="navigateTo('admin_dashboard')"
+        style="background:var(--color-blue-support); border-color:var(--color-gold); font-weight:700;">
+        <i class="fas fa-user-lock"></i> Dashboard Admin
+      </button>
+      <button class="proto-btn proto-btn-view" data-view="admin_users" onclick="navigateTo('admin_users')"
+        style="background:rgba(245, 163, 26, 0.2); color:#FEE7B3;">
+        <i class="fas fa-users-cog"></i> Users & Roles
+      </button>
+    </div>
+
+    <!-- Responsive Viewport Simulator -->
+    <div style="display:flex; align-items:center; gap:8px;">
+      <span style="font-size:0.75rem; color:#94A3B8;">Ukuran:</span>
+      <div class="proto-viewport-switcher">
+        <button id="vp-desktop-btn" class="viewport-btn active" onclick="setViewport('desktop')"
+          title="Desktop View (1440px)">
+          <i class="fas fa-desktop"></i> Desktop
+        </button>
+        <button id="vp-tablet-btn" class="viewport-btn" onclick="setViewport('tablet')" title="Tablet View (768px)">
+          <i class="fas fa-tablet-alt"></i> Tablet
+        </button>
+        <button id="vp-mobile-btn" class="viewport-btn" onclick="setViewport('mobile')" title="Smartphone View (390px)">
+          <i class="fas fa-mobile-alt"></i> Mobile
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- VIEWPORT WRAPPER (RESPONSIVE DEMO: DESKTOP, TABLET, MOBILE) -->
+  <div id="viewport-wrapper" class="viewport-desktop">
+    <div id="main-app-content">
+      <!-- Dynamic View Injected by JavaScript -->
+    </div>
+  </div>
+
+  <!-- Global Modal Container -->
+  <div id="modal-container"></div>
+
+  <!-- JavaScript Modules (cache-bust v3) -->
+  <script src="assets/js/app.js?v=3"></script>
+  <script src="assets/js/views.js?v=3"></script>
+  <script src="assets/js/page_home.js?v=3"></script>
+  <script src="assets/js/page_articles.js?v=3"></script>
+  <script src="assets/js/page_info.js?v=3"></script>
+  <script src="assets/js/page_admin.js?v=3"></script>
+  <script src="assets/js/page_roles.js?v=3"></script>
+
+  <!-- Initial Boot -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCurrentView();
+    });
+  </script>
+</body>
+
+</html>
